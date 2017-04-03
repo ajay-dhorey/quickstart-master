@@ -22,7 +22,7 @@ __decorate([
 HeroDetailComponent = __decorate([
     core_1.Component({
         selector: 'hero-detail',
-        templateUrl: "./heroDetailComponentTemplate.html",
+        templateUrl: "./hero-detail.component.template.html",
         styleUrls: ['./hero-detail.component.css']
     })
 ], HeroDetailComponent);
