@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Hero } from './hero';
 import { HeroDetailComponent } from './hero-detail.component';
 import { HeroService } from './hero.service';
@@ -18,12 +19,16 @@ export class HeroesComponent implements OnInit {
     this.getHeroes();
   }
 
-  constructor(private heroService: HeroService) { }
+  constructor(private heroService: HeroService, private route: Router) { }
 
   getHeroes(): void {
     this.heroService.getHeroes().then(heroes => this.heroes = heroes);
   }
   onSelect(hero: Hero) {
     this.selectedHero = hero;
+  }
+
+  gotoDetail(){
+    this.route.navigate(['/detail', this.selectedHero.id]);
   }
 }
