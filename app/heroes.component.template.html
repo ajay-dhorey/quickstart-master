@@ -9,3 +9,9 @@
         <button (click)="gotoDetail()">View Details 2</button>
     </div>
 </ul>
+<div > 
+    <label> Hero name: </label> <input  #heroname/>
+    <button (click)="add(heroname.value); heroname.value=''" >
+        Add
+    </button>
+</div>

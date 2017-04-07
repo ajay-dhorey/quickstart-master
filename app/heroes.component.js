@@ -30,6 +30,10 @@ var HeroesComponent = (function () {
     HeroesComponent.prototype.gotoDetail = function () {
         this.route.navigate(['/detail', this.selectedHero.id]);
     };
+    HeroesComponent.prototype.add = function (name) {
+        var _this = this;
+        this.heroService.create(name).then(function (hero) { _this.heroes.push(hero); _this.selectedHero = null; });
+    };
     return HeroesComponent;
 }());
 HeroesComponent = __decorate([
